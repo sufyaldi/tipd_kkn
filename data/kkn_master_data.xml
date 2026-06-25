@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Master Geografis: Provinsi -->
+        <record id="prov_sulsel" model="tipd_kkn.province">
+            <field name="name">Sulawesi Selatan</field>
+        </record>
+        <record id="prov_sulbar" model="tipd_kkn.province">
+            <field name="name">Sulawesi Barat</field>
+        </record>
+
+        <!-- Master Geografis: Kabupaten / Kota -->
+        <record id="kab_parepare" model="tipd_kkn.regency">
+            <field name="name">Kota Parepare</field>
+            <field name="province_id" ref="prov_sulsel"/>
+        </record>
+        <record id="kab_pinrang" model="tipd_kkn.regency">
+            <field name="name">Kabupaten Pinrang</field>
+            <field name="province_id" ref="prov_sulsel"/>
+        </record>
+        <record id="kab_barru" model="tipd_kkn.regency">
+            <field name="name">Kabupaten Barru</field>
+            <field name="province_id" ref="prov_sulsel"/>
+        </record>
+        <record id="kab_sidrap" model="tipd_kkn.regency">
+            <field name="name">Kabupaten Sidenreng Rappang</field>
+            <field name="province_id" ref="prov_sulsel"/>
+        </record>
+
+        <!-- Master Geografis: Kecamatan (Parepare) -->
+        <record id="kec_soreang" model="tipd_kkn.district">
+            <field name="name">Soreang</field>
+            <field name="regency_id" ref="kab_parepare"/>
+        </record>
+        <record id="kec_ujung" model="tipd_kkn.district">
+            <field name="name">Ujung</field>
+            <field name="regency_id" ref="kab_parepare"/>
+        </record>
+        <record id="kec_bacukiki" model="tipd_kkn.district">
+            <field name="name">Bacukiki</field>
+            <field name="regency_id" ref="kab_parepare"/>
+        </record>
+        <record id="kec_bacukiki_barat" model="tipd_kkn.district">
+            <field name="name">Bacukiki Barat</field>
+            <field name="regency_id" ref="kab_parepare"/>
+        </record>
+
+        <!-- Master Geografis: Desa / Kelurahan (Contoh di Soreang) -->
+        <record id="kel_watang_soreang" model="tipd_kkn.village">
+            <field name="name">Watang Soreang</field>
+            <field name="district_id" ref="kec_soreang"/>
+            <field name="postal_code">91131</field>
+        </record>
+        <record id="kel_bukit_harapan" model="tipd_kkn.village">
+            <field name="name">Bukit Harapan</field>
+            <field name="district_id" ref="kec_soreang"/>
+            <field name="postal_code">91131</field>
+        </record>
+
+        <!-- Master Akademik: Fakultas IAIN Parepare -->
+        <record id="fak_tarbiyah" model="tipd_kkn.faculty">
+            <field name="name">Fakultas Tarbiyah</field>
+            <field name="code">FATAR</field>
+        </record>
+        <record id="fak_syariah" model="tipd_kkn.faculty">
+            <field name="name">Fakultas Syariah dan Ilmu Hukum Islam</field>
+            <field name="code">FAKSHI</field>
+        </record>
+        <record id="fak_febi" model="tipd_kkn.faculty">
+            <field name="name">Fakultas Ekonomi dan Bisnis Islam</field>
+            <field name="code">FEBI</field>
+        </record>
+        <record id="fak_fuad" model="tipd_kkn.faculty">
+            <field name="name">Fakultas Ushuluddin, Adab, dan Dakwah</field>
+            <field name="code">FUAD</field>
+        </record>
+
+        <!-- Master Akademik: Program Studi -->
+        <record id="prodi_pai" model="tipd_kkn.study_program">
+            <field name="name">Pendidikan Agama Islam</field>
+            <field name="code">PAI</field>
+            <field name="faculty_id" ref="fak_tarbiyah"/>
+        </record>
+        <record id="prodi_pba" model="tipd_kkn.study_program">
+            <field name="name">Pendidikan Bahasa Arab</field>
+            <field name="code">PBA</field>
+            <field name="faculty_id" ref="fak_tarbiyah"/>
+        </record>
+        <record id="prodi_hki" model="tipd_kkn.study_program">
+            <field name="name">Hukum Keluarga Islam</field>
+            <field name="code">HKI</field>
+            <field name="faculty_id" ref="fak_syariah"/>
+        </record>
+        <record id="prodi_hes" model="tipd_kkn.study_program">
+            <field name="name">Hukum Ekonomi Syariah</field>
+            <field name="code">HES</field>
+            <field name="faculty_id" ref="fak_syariah"/>
+        </record>
+        <record id="prodi_ps" model="tipd_kkn.study_program">
+            <field name="name">Perbankan Syariah</field>
+            <field name="code">PS</field>
+            <field name="faculty_id" ref="fak_febi"/>
+        </record>
+        <record id="prodi_mbs" model="tipd_kkn.study_program">
+            <field name="name">Manajemen Bisnis Syariah</field>
+            <field name="code">MBS</field>
+            <field name="faculty_id" ref="fak_febi"/>
+        </record>
+        <record id="prodi_bpi" model="tipd_kkn.study_program">
+            <field name="name">Bimbingan Penyuluhan Islam</field>
+            <field name="code">BPI</field>
+            <field name="faculty_id" ref="fak_fuad"/>
+        </record>
+        <record id="prodi_kpi" model="tipd_kkn.study_program">
+            <field name="name">Komunikasi dan Penyiaran Islam</field>
+            <field name="code">KPI</field>
+            <field name="faculty_id" ref="fak_fuad"/>
+        </record>
+
+        <!-- Master Akademik: Komponen Penilaian (OBE) -->
+        <record id="grade_comp_observasi" model="tipd_kkn.grade.component">
+            <field name="name">Perencanaan &amp; Observasi (CPMK 1)</field>
+            <field name="weight">15.0</field>
+            <field name="description">Laporan Observasi Awal (Analisis Sosial/PRA), Matrik Program Kerja, Seminar Awal / Lokakarya Desa.</field>
+        </record>
+        <record id="grade_comp_kinerja" model="tipd_kkn.grade.component">
+            <field name="name">Kinerja Lapangan &amp; Etika (CPMK 2, 3)</field>
+            <field name="weight">35.0</field>
+            <field name="description">Kedisiplinan, tata krama, interaksi sosial, kepemimpinan, dan kontribusi nyata dalam program.</field>
+        </record>
+        <record id="grade_comp_lkh" model="tipd_kkn.grade.component">
+            <field name="name">Laporan Kegiatan Harian / LKH (CPMK 2, 4)</field>
+            <field name="weight">20.0</field>
+            <field name="description">Konsistensi pengisian logbook harian di portal, serta refleksi kedalaman kegiatan.</field>
+        </record>
+        <record id="grade_comp_luaran" model="tipd_kkn.grade.component">
+            <field name="name">Luaran / Produk KKN (CPMK 2, 4)</field>
+            <field name="weight">15.0</field>
+            <field name="description">Publikasi Media Massa, Video Dokumenter, atau Artikel Ilmiah Pengabdian.</field>
+        </record>
+        <record id="grade_comp_laporan" model="tipd_kkn.grade.component">
+            <field name="name">Laporan Akhir &amp; Lokakarya (CPMK 4)</field>
+            <field name="weight">15.0</field>
+            <field name="description">Sistematika penulisan laporan kelompok dan presentasi Lokakarya Akhir (Expo).</field>
+        </record>
+    </data>
+</odoo>

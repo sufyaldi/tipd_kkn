@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from . import kkn_academic
+from . import kkn_geography
 from . import kkn_program
 from . import kkn_location
 from . import kkn_group

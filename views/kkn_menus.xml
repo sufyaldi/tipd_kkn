@@ -12,6 +12,17 @@
     <menuitem id="menu_kkn_group" name="Kelompok" parent="menu_kkn_master" sequence="20" action="action_tipd_kkn_group"/>
     <menuitem id="menu_kkn_location" name="Lokasi Posko" parent="menu_kkn_master" sequence="30" action="action_tipd_kkn_location"/>
     
+    <menuitem id="menu_kkn_master_academic" name="Master Akademik" parent="menu_kkn_master" sequence="40"/>
+    <menuitem id="menu_kkn_faculty" name="Fakultas" parent="menu_kkn_master_academic" sequence="10" action="action_tipd_kkn_faculty"/>
+    <menuitem id="menu_kkn_study_program" name="Program Studi" parent="menu_kkn_master_academic" sequence="20" action="action_tipd_kkn_study_program"/>
+    <menuitem id="menu_kkn_grade_component" name="Komponen Nilai" parent="menu_kkn_master_academic" sequence="30" action="action_tipd_kkn_grade_component"/>
+
+    <menuitem id="menu_kkn_master_geo" name="Master Geografis" parent="menu_kkn_master" sequence="50"/>
+    <menuitem id="menu_kkn_province" name="Provinsi" parent="menu_kkn_master_geo" sequence="10" action="action_tipd_kkn_province"/>
+    <menuitem id="menu_kkn_regency" name="Kabupaten / Kota" parent="menu_kkn_master_geo" sequence="20" action="action_tipd_kkn_regency"/>
+    <menuitem id="menu_kkn_district" name="Kecamatan" parent="menu_kkn_master_geo" sequence="30" action="action_tipd_kkn_district"/>
+    <menuitem id="menu_kkn_village" name="Desa / Kelurahan" parent="menu_kkn_master_geo" sequence="40" action="action_tipd_kkn_village"/>
+    
     <!-- User Management -->
     <menuitem id="menu_kkn_users" name="Peserta &amp; DPL" parent="menu_kkn_root" sequence="40"/>
     <menuitem id="menu_kkn_participant" name="Mahasiswa Peserta" parent="menu_kkn_users" sequence="10" action="action_tipd_kkn_participant"/>

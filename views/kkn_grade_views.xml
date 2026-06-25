@@ -30,8 +30,18 @@
                         </group>
                     </group>
                     <notebook>
+                        <page string="Rincian Komponen Nilai">
+                            <field name="line_ids">
+                                <list editable="bottom">
+                                    <field name="component_id"/>
+                                    <field name="score"/>
+                                    <field name="weight" readonly="1"/>
+                                    <field name="total_score" readonly="1"/>
+                                </list>
+                            </field>
+                        </page>
                         <page string="Catatan DPL">
-                            <field name="notes" placeholder="Catatan dan evaluasi dari DPL..."/>
+                            <field name="remarks" placeholder="Catatan dan evaluasi dari DPL..."/>
                         </page>
                     </notebook>
                 </sheet>
