@@ -70,3 +70,7 @@ class KknActivity(models.Model):
     def action_reject(self):
         for record in self:
             record.state = 'rejected'
+
+    def action_draft(self):
+        for record in self:
+            record.state = 'draft'
