@@ -12,6 +12,11 @@ Modul ini adalah *backend engine* (Inti) dari Sistem Informasi Kuliah Kerja Nyat
 7. **Penilaian Akhir**: Fitur bagi DPL untuk memberikan nilai akhir mahasiswa.
 8. **Native Odoo Chatter**: Menggunakan *mail.thread* bawaan Odoo untuk aktivitas komentar dan diskusi LKH, menggantikan sistem komentar manual di aplikasi lama.
 
+## Prasyarat Instalasi (Prerequisites)
+Sebelum menginstal modul ini, pastikan Anda telah:
+1. Menginstal dan mengonfigurasi server **Odoo 19** sebagai *core engine*. Modul ini tidak dapat berjalan pada Odoo versi 18 ke bawah.
+2. Memastikan service PostgreSQL berjalan dan terhubung dengan Odoo.
+
 ## Dependensi
 - `base`
 - `mail`
