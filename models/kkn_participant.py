@@ -43,12 +43,13 @@ class KknParticipant(models.Model):
                 # Get the portal group
                 portal_group = self.env.ref('base.group_portal')
                 
+                user_name = record.name or record.partner_id.name or record.nim
                 user = self.env['res.users'].sudo().create({
-                    'name': record.name,
+                    'name': user_name,
                     'login': record.nim,
                     'password': record.nim,
                     'partner_id': record.partner_id.id,
-                    'groups_id': [(6, 0, [portal_group.id])],
+                    'group_ids': [(6, 0, [portal_group.id])],
                 })
             
             record.status = 'active'
