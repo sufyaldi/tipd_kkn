@@ -34,11 +34,12 @@
     """,
     'author': 'SufyALDI - Forum TIPD',
     'website': '',
-    'depends': ['base', 'mail'],
+    'depends': ['base', 'mail', 'account'],
     'data': [
         'security/kkn_security.xml',
         'security/ir.model.access.csv',
         'data/kkn_master_data.xml',
+        'data/kkn_dummy_data.xml',
         'views/kkn_program_views.xml',
         'views/kkn_location_views.xml',
         'views/kkn_master_views.xml',

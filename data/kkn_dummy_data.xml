@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- ============================================== -->
+        <!-- 1. DUMMY FAKULTAS & PRODI                      -->
+        <!-- ============================================== -->
+        <record id="dummy_faculty_tarbiyah" model="tipd_kkn.faculty">
+            <field name="name">Fakultas Tarbiyah</field>
+        </record>
+        <record id="dummy_faculty_syariah" model="tipd_kkn.faculty">
+            <field name="name">Fakultas Syariah</field>
+        </record>
+        <record id="dummy_faculty_ushuluddin" model="tipd_kkn.faculty">
+            <field name="name">Fakultas Ushuluddin</field>
+        </record>
+
+        <!-- Program Studi -->
+        <record id="dummy_prodi_pai" model="tipd_kkn.study_program">
+            <field name="name">Pendidikan Agama Islam (PAI)</field>
+            <field name="faculty_id" ref="dummy_faculty_tarbiyah"/>
+        </record>
+        <record id="dummy_prodi_pba" model="tipd_kkn.study_program">
+            <field name="name">Pendidikan Bahasa Arab (PBA)</field>
+            <field name="faculty_id" ref="dummy_faculty_tarbiyah"/>
+        </record>
+        <record id="dummy_prodi_hki" model="tipd_kkn.study_program">
+            <field name="name">Hukum Keluarga Islam (HKI)</field>
+            <field name="faculty_id" ref="dummy_faculty_syariah"/>
+        </record>
+        <record id="dummy_prodi_hes" model="tipd_kkn.study_program">
+            <field name="name">Hukum Ekonomi Syariah (HES)</field>
+            <field name="faculty_id" ref="dummy_faculty_syariah"/>
+        </record>
+
+        <!-- ============================================== -->
+        <!-- 2. DUMMY PROGRAM KKN                           -->
+        <!-- ============================================== -->
+        <record id="dummy_program_reguler" model="tipd_kkn.program">
+            <field name="name">KKN Reguler 2026</field>
+            <field name="year">2026</field>
+            <field name="start_date">2026-07-01</field>
+            <field name="end_date">2026-08-30</field>
+            <field name="theme">KKN Reguler di wilayah lokal</field>
+        </record>
+        <record id="dummy_program_desa_binaan" model="tipd_kkn.program">
+            <field name="name">KKN Mandiri Desa Binaan</field>
+            <field name="year">2026</field>
+            <field name="start_date">2026-07-01</field>
+            <field name="end_date">2026-08-30</field>
+            <field name="theme">Pemberdayaan pada desa binaan khusus</field>
+        </record>
+        <record id="dummy_program_internasional" model="tipd_kkn.program">
+            <field name="name">KKN Mandiri Internasional</field>
+            <field name="year">2026</field>
+            <field name="start_date">2026-08-01</field>
+            <field name="end_date">2026-09-30</field>
+            <field name="theme">Penempatan KKN di luar negeri</field>
+        </record>
+        <record id="dummy_program_nusantara" model="tipd_kkn.program">
+            <field name="name">KKN Nusantara</field>
+            <field name="year">2026</field>
+            <field name="start_date">2026-07-15</field>
+            <field name="end_date">2026-09-15</field>
+            <field name="theme">Lintas pulau dan kolaborasi antar PTKIN</field>
+        </record>
+
+        <!-- ============================================== -->
+        <!-- 3. DUMMY LOKASI POSKO                          -->
+        <!-- ============================================== -->
+        <record id="dummy_location_parepare" model="tipd_kkn.location">
+            <field name="name">Kec. Bacukiki, Kota Parepare</field>
+            <field name="address">Kel. Watang Bacukiki</field>
+        </record>
+        <record id="dummy_location_sidrap" model="tipd_kkn.location">
+            <field name="name">Kec. Watang Pulu, Kabupaten Sidrap</field>
+            <field name="address">Desa Buae</field>
+        </record>
+        <record id="dummy_location_kendari" model="tipd_kkn.location">
+            <field name="name">Kec. Kambu, Kota Kendari</field>
+            <field name="address">Kel. Mokoau</field>
+        </record>
+        <record id="dummy_location_malaysia" model="tipd_kkn.location">
+            <field name="name">Kuala Lumpur, Malaysia</field>
+            <field name="address">Kedutaan Besar RI / Sekolah Indonesia</field>
+        </record>
+
+        <!-- ============================================== -->
+        <!-- 4. DUMMY KONTAK / PARTNER (Untuk User)         -->
+        <!-- ============================================== -->
+        <!-- Partner DPL -->
+        <record id="partner_dpl_1" model="res.partner">
+            <field name="name">Dr. Muhammad Arif, M.Ag.</field>
+            <field name="email">arif@example.com</field>
+            <field name="ref">198001012005011001</field>
+            <field name="autopost_bills">never</field>
+        </record>
+        <record id="partner_dpl_2" model="res.partner">
+            <field name="name">Siti Aminah, Ph.D.</field>
+            <field name="email">aminah@example.com</field>
+            <field name="ref">198502022010012002</field>
+            <field name="autopost_bills">never</field>
+        </record>
+
+        <!-- Partner Mahasiswa -->
+        <record id="partner_mhs_1" model="res.partner">
+            <field name="name">Ahmad Budi</field>
+            <field name="email">ahmad@student.com</field>
+            <field name="autopost_bills">never</field>
+        </record>
+        <record id="partner_mhs_2" model="res.partner">
+            <field name="name">Siti Fatimah</field>
+            <field name="email">fatimah@student.com</field>
+            <field name="autopost_bills">never</field>
+        </record>
+        <record id="partner_mhs_3" model="res.partner">
+            <field name="name">Reza Rahadian</field>
+            <field name="email">reza@student.com</field>
+            <field name="autopost_bills">never</field>
+        </record>
+        <record id="partner_mhs_4" model="res.partner">
+            <field name="name">Putri Lestari</field>
+            <field name="email">putri@student.com</field>
+            <field name="autopost_bills">never</field>
+        </record>
+
+        <!-- ============================================== -->
+        <!-- 5. DUMMY DPL                                   -->
+        <!-- ============================================== -->
+        <record id="dummy_dpl_1" model="tipd_kkn.supervisor">
+            <field name="partner_id" ref="partner_dpl_1"/>
+            <field name="nip">198001012005011001</field>
+            <field name="program_id" ref="dummy_program_reguler"/>
+        </record>
+        <record id="dummy_dpl_2" model="tipd_kkn.supervisor">
+            <field name="partner_id" ref="partner_dpl_2"/>
+            <field name="nip">198502022010012002</field>
+            <field name="program_id" ref="dummy_program_internasional"/>
+        </record>
+
+        <!-- ============================================== -->
+        <!-- 6. DUMMY KELOMPOK                              -->
+        <!-- ============================================== -->
+        <record id="dummy_group_1" model="tipd_kkn.group">
+            <field name="name">Kelompok 1 (Parepare)</field>
+            <field name="program_id" ref="dummy_program_reguler"/>
+            <field name="location_id" ref="dummy_location_parepare"/>
+            <field name="supervisor_id" ref="dummy_dpl_1"/>
+        </record>
+        <record id="dummy_group_2" model="tipd_kkn.group">
+            <field name="name">Kelompok 2 (Malaysia)</field>
+            <field name="program_id" ref="dummy_program_internasional"/>
+            <field name="location_id" ref="dummy_location_malaysia"/>
+            <field name="supervisor_id" ref="dummy_dpl_2"/>
+        </record>
+
+        <!-- ============================================== -->
+        <!-- 7. DUMMY MAHASISWA                             -->
+        <!-- ============================================== -->
+        <record id="dummy_mhs_1" model="tipd_kkn.participant">
+            <field name="partner_id" ref="partner_mhs_1"/>
+            <field name="nim">202610101</field>
+            <field name="name">Ahmad Budi</field>
+            <field name="program_id" ref="dummy_program_reguler"/>
+            <field name="faculty_id" ref="dummy_faculty_tarbiyah"/>
+            <field name="study_program_id" ref="dummy_prodi_pai"/>
+            <field name="group_id" ref="dummy_group_1"/>
+            <field name="status">registered</field>
+        </record>
+        <record id="dummy_mhs_2" model="tipd_kkn.participant">
+            <field name="partner_id" ref="partner_mhs_2"/>
+            <field name="nim">202610102</field>
+            <field name="name">Siti Fatimah</field>
+            <field name="program_id" ref="dummy_program_reguler"/>
+            <field name="faculty_id" ref="dummy_faculty_syariah"/>
+            <field name="study_program_id" ref="dummy_prodi_hki"/>
+            <field name="group_id" ref="dummy_group_1"/>
+            <field name="status">active</field>
+        </record>
+        <record id="dummy_mhs_3" model="tipd_kkn.participant">
+            <field name="partner_id" ref="partner_mhs_3"/>
+            <field name="nim">202620201</field>
+            <field name="name">Reza Rahadian</field>
+            <field name="program_id" ref="dummy_program_internasional"/>
+            <field name="faculty_id" ref="dummy_faculty_tarbiyah"/>
+            <field name="study_program_id" ref="dummy_prodi_pba"/>
+            <field name="group_id" ref="dummy_group_2"/>
+            <field name="status">active</field>
+        </record>
+        <record id="dummy_mhs_4" model="tipd_kkn.participant">
+            <field name="partner_id" ref="partner_mhs_4"/>
+            <field name="nim">202630301</field>
+            <field name="name">Putri Lestari</field>
+            <field name="program_id" ref="dummy_program_internasional"/>
+            <field name="faculty_id" ref="dummy_faculty_syariah"/>
+            <field name="study_program_id" ref="dummy_prodi_hes"/>
+            <field name="group_id" ref="dummy_group_2"/>
+            <field name="status">registered</field>
+        </record>
+
+        <!-- ============================================== -->
+        <!-- 8. DUMMY LKH (AKTIVITAS)                       -->
+        <!-- ============================================== -->
+        <record id="dummy_lkh_1" model="tipd_kkn.activity">
+            <field name="name">Observasi Lapangan</field>
+            <field name="participant_id" ref="dummy_mhs_2"/>
+            <field name="group_id" ref="dummy_group_1"/>
+            <field name="date">2026-07-02</field>
+            <field name="description">Melakukan observasi di kantor kelurahan dan pemetaan sosial.</field>
+            <field name="state">approved</field>
+        </record>
+        <record id="dummy_lkh_2" model="tipd_kkn.activity">
+            <field name="name">Mengajar TPA</field>
+            <field name="participant_id" ref="dummy_mhs_2"/>
+            <field name="group_id" ref="dummy_group_1"/>
+            <field name="date">2026-07-05</field>
+            <field name="description">Mengajar santri di TPA Al-Ikhlas bersama tokoh masyarakat.</field>
+            <field name="state">submitted</field>
+        </record>
+        <record id="dummy_lkh_3" model="tipd_kkn.activity">
+            <field name="name">Koordinasi Sekolah Indonesia</field>
+            <field name="participant_id" ref="dummy_mhs_3"/>
+            <field name="group_id" ref="dummy_group_2"/>
+            <field name="date">2026-08-05</field>
+            <field name="description">Rapat koordinasi dengan kepala sekolah Indonesia di Kuala Lumpur.</field>
+            <field name="state">approved</field>
+        </record>
+
+        <!-- ============================================== -->
+        <!-- 9. DUMMY PENILAIAN                             -->
+        <!-- ============================================== -->
+        <record id="dummy_grade_1" model="tipd_kkn.grade">
+            <field name="participant_id" ref="dummy_mhs_2"/>
+            <field name="supervisor_id" ref="dummy_dpl_1"/>
+            <field name="score">85.5</field>
+            <field name="remarks">Sangat aktif dalam kegiatan masyarakat. (A)</field>
+        </record>
+        
+    </data>
+</odoo>
