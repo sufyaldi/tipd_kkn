@@ -17,6 +17,9 @@
         <field name="model">tipd_kkn.supervisor</field>
         <field name="arch" type="xml">
             <form string="Dosen Pembimbing">
+                <header>
+                    <button name="action_create_user" string="Buat Akun Login" type="object" class="oe_highlight" />
+                </header>
                 <sheet>
                     <div class="oe_title">
                         <h1>

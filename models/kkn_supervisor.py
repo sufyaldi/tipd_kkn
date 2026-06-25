@@ -11,3 +11,24 @@ class KknSupervisor(models.Model):
     
     group_ids = fields.One2many('tipd_kkn.group', 'supervisor_id', string='Kelompok Bimbingan')
     program_id = fields.Many2one('tipd_kkn.program', string='Program KKN')
+
+    def action_create_user(self):
+        for record in self:
+            if not record.nip:
+                continue
+                
+            # Cek apakah user sudah ada
+            user = self.env['res.users'].sudo().search([('login', '=', record.nip)], limit=1)
+            if not user:
+                # DPL masuk ke grup Internal User (agar bisa akses backend) dan grup DPL KKN
+                group_internal = self.env.ref('base.group_user')
+                group_dpl = self.env.ref('tipd_kkn.group_kkn_supervisor')
+                
+                user_name = record.partner_id.name or record.nip
+                user = self.env['res.users'].sudo().create({
+                    'name': user_name,
+                    'login': record.nip,
+                    'password': record.nip,
+                    'partner_id': record.partner_id.id,
+                    'groups_id': [(6, 0, [group_internal.id, group_dpl.id])],
+                })
