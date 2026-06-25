@@ -10,7 +10,7 @@ Modul ini adalah *backend engine* (Inti) dari Sistem Informasi Kuliah Kerja Nyat
 5. **Manajemen Kelompok**: Memetakan mahasiswa ke dalam kelompok beserta DPL dan lokasi pengabdiannya.
 6. **Laporan Kegiatan Harian (LKH)**: Mahasiswa dapat mengunggah laporan harian (judul, tanggal, deskripsi, status). Tersedia tampilan **Kanban View**.
 7. **Penilaian Akhir**: Fitur bagi DPL untuk memberikan nilai akhir mahasiswa.
-8. **Native Odoo Chatter**: Menggunakan *mail.thread* bawaan Odoo untuk aktivitas komentar dan diskusi LKH, menggantikan sistem komentar manual di aplikasi lama.
+8. **Native Odoo Chatter**: Menggunakan *mail.thread* bawaan Odoo untuk aktivitas komentar dan diskusi LKH, menggantikan sistem komentar manual di aplikasi lama pada umumnya.
 
 ## Prasyarat Instalasi (Prerequisites)
 Sebelum menginstal modul ini, pastikan Anda telah:
