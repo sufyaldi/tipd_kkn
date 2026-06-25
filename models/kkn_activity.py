@@ -13,6 +13,7 @@ class KknActivity(models.Model):
     participant_id = fields.Many2one('tipd_kkn.participant', string='Dilaporkan Oleh', tracking=True)
     
     description = fields.Html(string='Uraian Kegiatan', required=True)
+    image = fields.Image(string='Foto Dokumentasi', max_width=1920, max_height=1920)
     
     state = fields.Selection([
         ('draft', 'Draft'),
@@ -41,14 +42,30 @@ class KknActivity(models.Model):
             if record.participant_id and record.participant_id.partner_id:
                 author_id = record.participant_id.partner_id.id
                 
-            self.env['blog.post'].sudo().create({
+            # Siapkan data blog
+            blog_vals = {
                 'name': record.name,
                 'subtitle': f'Dilaporkan oleh {record.participant_id.name} ({record.group_id.name}) pada {record.date}',
                 'content': record.description,
                 'blog_id': blog.id,
                 'author_id': author_id,
                 'is_published': True,
-            })
+            }
+
+            # Jika ada gambar dokumentasi, jadikan background cover di Berita Blog
+            if record.image:
+                import json
+                # Format URL standar Odoo untuk memanggil image
+                image_url = f"/web/image/tipd_kkn.activity/{record.id}/image"
+                cover_properties = {
+                    "background-image": f"url('{image_url}')",
+                    "background_color_class": "o_cc3",
+                    "opacity": "0.5",
+                    "resize_class": "o_half_screen_height"
+                }
+                blog_vals['cover_properties'] = json.dumps(cover_properties)
+                
+            self.env['blog.post'].sudo().create(blog_vals)
 
     def action_reject(self):
         for record in self:

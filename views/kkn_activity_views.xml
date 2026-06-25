@@ -32,9 +32,11 @@
                     <field name="state" widget="statusbar" statusbar_visible="draft,submitted,approved"/>
                 </header>
                 <sheet>
+                    <field name="image" widget="image" class="oe_avatar" options="{'size': [128, 128]}"/>
                     <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
                         <h1>
-                            <field name="name" placeholder="Judul / Nama Kegiatan"/>
+                            <field name="name" placeholder="Judul Kegiatan"/>
                         </h1>
                     </div>
                     <group>
@@ -47,7 +49,7 @@
                         </group>
                     </group>
                     <notebook>
-                        <page string="Deskripsi Kegiatan">
+                        <page string="Uraian Kegiatan" name="description">
                             <field name="description"/>
                         </page>
                     </notebook>
