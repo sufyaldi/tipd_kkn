@@ -1,6 +1,6 @@
 # TIPD KKN Management (Odoo 19)
 
-Modul ini adalah *backend engine* (Inti) dari Sistem Informasi Kuliah Kerja Nyata (KKN) yang dimigrasikan dari platform CodeIgniter lama. Modul ini bertanggung jawab atas seluruh manajemen master data, relasi, dan logika bisnis administrasi KKN.
+Modul ini adalah *backend engine* (Inti) dari Sistem Informasi Kuliah Kerja Nyata (KKN). Modul ini bertanggung jawab atas seluruh manajemen master data, relasi, dan logika bisnis administrasi KKN.
 
 ## Fitur Utama
 1. **Master Program KKN**: Mendefinisikan periode/program KKN (Tema, Tahun, Tanggal, dan Status).
@@ -14,7 +14,7 @@ Modul ini adalah *backend engine* (Inti) dari Sistem Informasi Kuliah Kerja Nyat
 
 ## Prasyarat Instalasi (Prerequisites)
 Sebelum menginstal modul ini, pastikan Anda telah:
-1. Menginstal dan mengonfigurasi server **Odoo 19** sebagai *core engine*. Modul ini tidak dapat berjalan pada Odoo versi 18 ke bawah.
+1. Menginstal dan mengonfigurasi server **Odoo 19** sebagai *core engine*.
 2. Memastikan service PostgreSQL berjalan dan terhubung dengan Odoo.
 
 ## Dependensi
@@ -32,4 +32,4 @@ Jika Anda ingin mahasiswa dan DPL (Dosen) memiliki akses mandiri untuk mengisi f
 5. Peserta sekarang bisa melaporkan **LKH** dari portal. DPL dapat memvalidasinya.
 
 ---
-*Developed by TIPD*
+*Developed by SufyALDI & Forum TIPD*
